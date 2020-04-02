@@ -1,3 +1,4 @@
+# specify base image
 FROM python:3
 
 # set a directory for the app
@@ -9,8 +10,8 @@ COPY . .
 # install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# tell the port number the container should expose
+# define the port number the container should expose (5000 here b/c that's where our flask app runs)
 EXPOSE 5000
 
-# run the command
+# command for running the app
 CMD ["python", "./app.py"]
